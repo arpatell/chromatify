@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { getTimeRangeLabel } from '../utils/sharing';
+import { getTimeRangeLabel, getCreationDateLabel } from '../utils/sharing';
 import { getAuraName } from '../services/auraNaming';
 import { getCachedColorName, getColorNames } from '../services/colorNamesService';
 import AuraMark from './AuraMark';
@@ -73,9 +73,10 @@ export function SpotifyAttribution() {
 }
 
 export function AuraExportCard({ result, cardRef }) {
+  const creationDate = getCreationDateLabel(result.createdAt);
   return (
     <div className="export-card" ref={cardRef}>
-      <div className="export-brand"><div className="export-brand-title">Chromatify<AuraMark /></div><span>My music, in color.</span></div>
+      <div className="export-brand"><div className="export-brand-title">Chromatify<AuraMark /></div><span>{result.ownerName ? `${result.ownerName}’s music, in color.` : 'Music, in color.'}</span>{creationDate && <time dateTime={result.createdAt}>Created {creationDate}</time>}</div>
       <AuraSleeve result={result} compact still />
       <ColorPalette result={result} />
       <div className="export-tracks">

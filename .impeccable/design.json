@@ -364,6 +364,11 @@
         "name": "reduced-motion",
         "value": "animation: none !important; transition: none !important; scroll-behavior: auto",
         "purpose": "System motion preference; export sleeves are also still."
+      },
+      {
+        "name": "shared-aura-invitation",
+        "value": "2.4s ease-in-out 3",
+        "purpose": "Three border-only pulses on Make your aura, starting four seconds after a shared page opens; disabled with reduced motion."
       }
     ],
     "breakpoints": [

@@ -2,6 +2,7 @@ import { fetchTopSongs, getSongColors, getSongListenCounts } from './spotifyServ
 import { calculateAuraColor, getTop3Colors, arrayToHex } from './colorService';
 import { getColorNames } from './colorNamesService';
 import { getAuraName } from './auraNaming';
+import { fetchDisplayName } from './profileService';
 
 // Keep the existing count-weighted calculation, with track rank as its fallback.
 const weightedColors = (songs, colors, counts) => {
@@ -37,15 +38,18 @@ const rankedColors = (songs, colors, counts) => {
 export const generateAura = async (accessToken, timeRange) => {
   const songs = await fetchTopSongs(accessToken, timeRange);
   if (!songs.length) return null;
-  const [colors, counts] = await Promise.all([
+  const [colors, counts, ownerName] = await Promise.all([
     getSongColors(accessToken, songs),
     getSongListenCounts(accessToken, songs, timeRange).catch(() => Object.fromEntries(songs.map((song) => [song.id, 0]))),
+    fetchDisplayName(accessToken),
   ]);
   const pool = weightedColors(songs, colors, counts);
   const aura = calculateAuraColor(pool);
   const ranked = rankedColors(songs, colors, counts);
   const palette = ranked.length ? ranked : await getTop3Colors(pool);
   return {
+    ownerName,
+    createdAt: new Date().toISOString(),
     auraColor: arrayToHex(aura),
     auraName: getAuraName({ auraColor: arrayToHex(aura), palette: palette.map(arrayToHex), songs }),
     timeRange,

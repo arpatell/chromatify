@@ -1,4 +1,4 @@
-import { buildShareUrl, readSharedAura } from './sharing';
+import { buildShareUrl, readSharedAura, normalizeDisplayName, normalizeCreatedAt, getCreationDateLabel } from './sharing';
 
 const result = {
   auraColor: '#ac86ed',
@@ -42,4 +42,37 @@ test('public Spotify IDs round-trip for artwork lookup while arbitrary URLs stay
   expect(song.external_urls.spotify).toBe(`https://open.spotify.com/track/${id}`);
   expect(song.album).toBeUndefined();
   expect(url).not.toContain('private-art-url');
+});
+
+test('owner display names survive a shared link without including account identifiers or email', () => {
+  const named = { ...result, ownerName: 'Zoë O’Connor 🎧', email: 'private@example.com', account_id: 'private-account' };
+  const url = buildShareUrl(named, 'https://chromatify.example');
+  expect(readSharedAura(new URL(url).search).ownerName).toBe(named.ownerName);
+  expect(url).not.toContain('private%40example.com');
+  expect(url).not.toContain('private-account');
+});
+
+test('absent names stay anonymous, and long or control-character names are normalized', () => {
+  expect(new URL(buildShareUrl(result, 'https://chromatify.example')).searchParams.has('owner')).toBe(false);
+  expect(readSharedAura('?aura=ac86ed').ownerName).toBe('');
+  expect(normalizeDisplayName('  Alex\u0000  Smith  ')).toBe('Alex Smith');
+  expect(normalizeDisplayName(null)).toBe('');
+  expect(Array.from(normalizeDisplayName('🎧'.repeat(100)))).toHaveLength(80);
+});
+
+test('re-sharing preserves the original creator and creation date', () => {
+  const original = { ...result, ownerName: 'Alex', createdAt: '2026-10-21T10:00:00.000Z' };
+  const first = readSharedAura(new URL(buildShareUrl(original, 'https://chromatify.example')).search);
+  const reshared = readSharedAura(new URL(buildShareUrl(first, 'https://another.example')).search);
+  expect(reshared.ownerName).toBe(original.ownerName);
+  expect(reshared.createdAt).toBe(original.createdAt);
+  expect(reshared.auraName).toBe(original.auraName);
+});
+
+test('missing or invalid creation dates remain absent', () => {
+  expect(readSharedAura('?aura=ac86ed').createdAt).toBe('');
+  expect(normalizeCreatedAt('not a date')).toBe('');
+  expect(normalizeCreatedAt('2026-02-31T10:00:00Z')).toBe('');
+  expect(getCreationDateLabel('')).toBe('');
+  expect(getCreationDateLabel('2026-10-21T10:00:00Z')).toMatch(/2026/);
 });

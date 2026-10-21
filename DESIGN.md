@@ -252,3 +252,7 @@ The portrait card is a fixed dark composition in both themes. Its 360×640 CSS c
 - **Don't** let the light theme change the export's dark composition or obscure its Spotify logo.
 
 The standalone About page extends the same charcoal, Manrope, peach-action and reading-spacing system. The main app keeps the About link out of its interface; the page remains available as a standalone reference. The homepage preview computes its aura hex from its sample palette with the same calculation as signed-in results.
+
+Shared aura attribution: include only the original creator’s Spotify display name and the original creation date in the public result. Re-sharing keeps those values in copied links, native share titles, and exported images; it never substitutes the viewer’s profile or the current date. Older links remain anonymous/undated. Keep re-sharing available alongside Make your aura.
+
+On shared aura pages, Make your aura receives three gentle border pulses (2.4s each) after a four-second delay, then stops. Reduced motion suppresses this invitation cue.

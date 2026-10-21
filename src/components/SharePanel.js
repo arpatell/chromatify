@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import html2canvas from 'html2canvas';
 import { AuraExportCard } from './AuraSleeve';
-import { buildShareUrl, copyText, getTimeRangeLabel } from '../utils/sharing';
+import { buildShareUrl, copyText, getTimeRangeLabel, getCreationDateLabel } from '../utils/sharing';
 import Icon from './Icon';
 import { getColorNames } from '../services/colorNamesService';
 
@@ -56,7 +56,8 @@ export default function SharePanel({ result, notify }) {
     }
     try {
       // The image is prepared before this click to preserve the share gesture.
-      await navigator.share({ files: [file], title: 'My Chromatify aura', text: `${result.auraName} — my ${getTimeRangeLabel(result.timeRange).toLowerCase()} in color.` });
+      const date = getCreationDateLabel(result.createdAt);
+      await navigator.share({ files: [file], title: result.ownerName ? `${result.ownerName}’s Chromatify` : 'Chromatify aura', text: `${result.auraName} — ${getTimeRangeLabel(result.timeRange).toLowerCase()} in color.${date ? ` Created ${date}.` : ''}` });
     } catch (error) {
       if (error.name !== 'AbortError') notify('Sharing could not open. Use Save image or Copy link instead.');
     }

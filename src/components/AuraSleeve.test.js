@@ -1,6 +1,6 @@
 import React from 'react';
 import { render, screen } from '@testing-library/react';
-import { ColorPalette, sleeveWash, SAMPLE_AURA } from './AuraSleeve';
+import { ColorPalette, sleeveWash, SAMPLE_AURA, AuraExportCard } from './AuraSleeve';
 import { arrayToHex, calculateAuraColor } from '../services/colorService';
 import { getColorNames } from '../services/colorNamesService';
 
@@ -10,6 +10,15 @@ test('homepage preview uses the generated aura hex rather than its first swatch'
   const palette = [[172, 134, 237], [237, 153, 126], [143, 196, 176]];
   expect(SAMPLE_AURA.auraColor).toBe(arrayToHex(calculateAuraColor(palette)));
   expect(SAMPLE_AURA.auraColor).not.toBe(SAMPLE_AURA.top3Colors[0]);
+});
+
+test('export cards retain the original creator name and creation date', async () => {
+  getColorNames.mockResolvedValue(['Violet']);
+  const result = { ...SAMPLE_AURA, ownerName: 'Alex', createdAt: '2026-10-21T10:00:00.000Z', top3Colors: ['#ac86ed'], topSongs: [] };
+  const { container } = render(<AuraExportCard result={result} />);
+  expect(screen.getByText('Alex’s music, in color.')).toBeTruthy();
+  expect(container.querySelector('time').getAttribute('dateTime')).toBe(result.createdAt);
+  expect(await screen.findByText('Violet')).toBeTruthy();
 });
 
 test('current provider names replace old labels without changing swatch hex values', async () => {

@@ -9,6 +9,28 @@ export const getTimeRangeLabel = (value) => TIME_RANGES.find((range) => range.va
 const isHex = (value) => typeof value === 'string' && /^#?[a-f\d]{6}$/i.test(value);
 const asHex = (value) => `#${value.replace('#', '').toLowerCase()}`;
 
+export const normalizeDisplayName = (value) => {
+  if (typeof value !== 'string') return '';
+  const printable = Array.from(value).filter((character) => {
+    const code = character.codePointAt(0);
+    return code >= 32 && (code < 127 || code > 159);
+  }).join('');
+  const name = printable.replace(/\s+/g, ' ').trim();
+  return Array.from(name).slice(0, 80).join('');
+};
+
+export const normalizeCreatedAt = (value) => {
+  if (typeof value !== 'string' || !/^\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}(?:\.\d{3})?Z$/.test(value)) return '';
+  const date = new Date(value);
+  if (!Number.isFinite(date.getTime()) || date.toISOString().slice(0, 10) !== value.slice(0, 10)) return '';
+  return date.toISOString();
+};
+
+export const getCreationDateLabel = (value) => {
+  const date = normalizeCreatedAt(value);
+  return date ? new Intl.DateTimeFormat(undefined, { year: 'numeric', month: 'short', day: 'numeric', timeZone: 'UTC' }).format(new Date(date)) : '';
+};
+
 export const buildShareUrl = (result, origin = window.location.origin) => {
   const params = new URLSearchParams({
     aura: result.auraColor.replace('#', ''),
@@ -22,6 +44,10 @@ export const buildShareUrl = (result, origin = window.location.origin) => {
       artist: song.artists?.[0]?.name || 'Unknown artist',
     }))),
   });
+  const ownerName = normalizeDisplayName(result.ownerName);
+  if (ownerName) params.set('owner', ownerName);
+  const createdAt = normalizeCreatedAt(result.createdAt);
+  if (createdAt) params.set('created', createdAt);
   return `${origin}/?${params.toString()}`;
 };
 
@@ -52,6 +78,8 @@ export const readSharedAura = (search) => {
 
   return {
     auraColor,
+    ownerName: normalizeDisplayName(params.get('owner')),
+    createdAt: normalizeCreatedAt(params.get('created')),
     auraName: (params.get('aura_name') || 'Music aura').slice(0, 80),
     timeRange: TIME_RANGES.some((item) => item.value === range) ? range : 'short_term',
     top3Colors: palette.length ? palette : [auraColor],

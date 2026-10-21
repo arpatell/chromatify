@@ -48,3 +48,5 @@ Later confirmed requirements: slow, nonrotating aura movement; no sample aura on
 Public shared links carry public Spotify track IDs and resolve album artwork through the credential-free Spotify oEmbed service. Legacy name-only links remain readable; recopying a link adds the required IDs. The header and export share one orange/blue/purple vector aura mark.
 
 Search discoverability: keep the main app compact, with descriptive head metadata, a crawlable initial homepage, and a standalone About reference page listed in the sitemap. Target the actual Spotify color/aura and music-sharing features without hidden keyword text, false social features, or ranking guarantees. Header/export use the same pre-rendered darker orb artwork; the favicon adds a white C.
+
+Shared aura attribution: include only the original creator’s Spotify display name and the original creation date in the public result. Re-sharing keeps those values in copied links, native share titles, and exported images; it never substitutes the viewer’s profile or the current date. Older links remain anonymous/undated. Keep re-sharing available alongside Make your aura.

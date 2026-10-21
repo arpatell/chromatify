@@ -28,3 +28,5 @@ FORM: Spectrum sleeve, grounded candidate 5, seed daed09f8; user-approved hybrid
 FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
 
 Public shared links carry public Spotify track IDs and resolve album artwork through the credential-free Spotify oEmbed service. Legacy name-only links remain readable; recopying a link adds the required IDs. The header and export share one orange/blue/purple vector aura mark.
+
+Shared aura attribution: include only the original creator’s Spotify display name and the original creation date in the public result. Re-sharing keeps those values in copied links, native share titles, and exported images; it never substitutes the viewer’s profile or the current date. Older links remain anonymous/undated. Keep re-sharing available alongside Make your aura.

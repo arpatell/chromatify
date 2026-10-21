@@ -42,8 +42,11 @@ p { line-height: 1.65; }
 .button-secondary:hover { background: var(--surface-hover); border-color: var(--muted); }
 .text-button { display: inline-flex; gap: 8px; align-items: center; padding: 8px 0; background: none; color: inherit; border: 0; font-size: 14px; font-weight: 700; text-decoration: underline; text-underline-offset: 4px; }
 .page-intro { display: flex; align-items: center; justify-content: space-between; gap: 24px; margin: 36px 0 28px; }
-.page-intro h1 { font-size: clamp(32px, 3.5vw, 48px); font-weight: 800; letter-spacing: -.04em; line-height: 1.15; }
+.page-intro h1 { font-size: clamp(32px, 3.5vw, 48px); font-weight: 800; letter-spacing: -.04em; line-height: 1.15; overflow-wrap: anywhere; }
 .page-intro p { margin-top: 12px; color: var(--muted); font-size: 14px; max-width: 64ch; }
+.create-aura-link { position: relative; }
+.create-aura-link--highlight::after { content: ''; position: absolute; pointer-events: none; inset: -5px; border: 2px solid transparent; border-radius: 14px; animation: aura-invite 2.4s ease-in-out 3; }
+@keyframes aura-invite { 0%, 100% { border-color: transparent; } 50% { border-color: var(--sage); } }
 .generation-controls { display: flex; align-items: center; justify-content: space-between; gap: 16px; margin-bottom: 30px; }
 .range-control { display: flex; padding: 5px; border: 1px solid var(--line); border-radius: 12px; min-width: 360px; }
 .range-control button { min-height: 40px; flex: 1; padding: 7px 20px; border: none; border-radius: 7px; background: transparent; color: var(--muted); font-size: 13px; font-weight: 600; white-space: nowrap; }
@@ -109,7 +112,8 @@ a.track-row:hover { background: var(--surface-hover); }
 .export-render { position: fixed; top: 0; left: -10000px; width: 360px; pointer-events: none; }
 .export-card { width: 360px; height: 640px; padding: 24px; background: #121719; color: #edf0e8; display: flex; flex-direction: column; overflow: hidden; --ink: #edf0e8; --muted: #aebbbd; --radius: 10px; }
 .export-brand { display: flex; flex-direction: column; gap: 4px; margin-bottom: 20px; font-size: 22px; font-weight: 800; letter-spacing: -.03em; }
-.export-brand > span { font-size: 11px; font-weight: 500; letter-spacing: 0; color: #aebbbd; }
+.export-brand > span { font-size: 11px; font-weight: 500; letter-spacing: 0; color: #aebbbd; max-height: 32px; overflow: hidden; overflow-wrap: anywhere; line-height: 16px; }
+.export-brand > time { font-size: 10px; font-weight: 500; line-height: 14px; letter-spacing: 0; color: #aebbbd; }
 .export-brand-title { display: flex; align-items: center; gap: 9px; }
 .export-brand-title .brand-aura { width: 19px; height: 19px; }
 .export-card .aura-sleeve { min-height: 260px; max-height: 260px; flex-shrink: 0; }
