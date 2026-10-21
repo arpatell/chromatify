@@ -16,10 +16,14 @@ export const useSpotifyAuth = () => {
 
     useEffect(() => {
         const code = new URLSearchParams(window.location.search).get('code');
-        const clientSecret = process.env.REACT_APP_CLIENT_SECRET;
         const codeVerifier = localStorage.getItem('spotify_pkce_verifier');
 
         if (code) {
+            // A browser client exchanges codes with PKCE, never a client secret.
+            if (!codeVerifier) {
+                window.location.replace('/');
+                return;
+            }
             const body = new URLSearchParams({
                 grant_type: 'authorization_code',
                 code: code,
@@ -27,11 +31,7 @@ export const useSpotifyAuth = () => {
                 client_id: CLIENT_ID,
             });
 
-            if (codeVerifier) {
-                body.append('code_verifier', codeVerifier);
-            } else if (clientSecret) {
-                body.append('client_secret', clientSecret);
-            }
+            body.append('code_verifier', codeVerifier);
 
             axios.post('https://accounts.spotify.com/api/token', body, {
                 headers: {

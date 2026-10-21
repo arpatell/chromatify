@@ -24,3 +24,16 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Local design previews, review captures, and verification tooling
+/.impeccable/mocks/
+/.impeccable/questions/
+/.impeccable/review/
+/.impeccable/qr-verification/
+/.impeccable/pending/
+/.impeccable/directions.json
+/.impeccable/compare-directions.json
+/.impeccable/verify-*.cjs
+/.impeccable/redesign-brief.md
+
+/.impeccable/compare-orb.cjs

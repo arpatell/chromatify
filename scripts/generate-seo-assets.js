@@ -1,82 +1,52 @@
 const fs = require('fs');
 const path = require('path');
+const config = require('../src/config/seo.json');
+const { metadata, pickSiteUrl, escapeHtml } = require('./seo/metadata');
 
-const rootDir = path.resolve(__dirname, '..');
-const publicDir = path.join(rootDir, 'public');
-const indexPath = path.join(publicDir, 'index.html');
-const robotsPath = path.join(publicDir, 'robots.txt');
-const sitemapPath = path.join(publicDir, 'sitemap.xml');
+function generateSeoAssets({ publicDir = path.resolve(__dirname, '../public'), siteUrl = pickSiteUrl(), env = process.env } = {}) {
+  const sourceDir = path.join(__dirname, 'seo');
+  const verification = env.GOOGLE_SITE_VERIFICATION || env.REACT_APP_GOOGLE_SITE_VERIFICATION;
+  const homeMetadata = metadata(siteUrl) + (verification ? `
+  <meta name="google-site-verification" content="${escapeHtml(verification)}" />` : '');
+  const template = fs.readFileSync(path.join(sourceDir, 'index.template.html'), 'utf8');
+  const fallback = fs.readFileSync(path.join(sourceDir, 'fallback.html'), 'utf8');
+  fs.mkdirSync(publicDir, { recursive: true });
+  fs.writeFileSync(path.join(publicDir, 'index.html'), template.replace('{{METADATA}}', homeMetadata).replace('{{FALLBACK}}', fallback));
 
-const toSiteUrl = (value) => {
-  if (!value || typeof value !== 'string') {
-    return null;
-  }
+  const aboutBody = fs.readFileSync(path.join(sourceDir, 'about-body.html'), 'utf8');
+  const about = `<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#121719" />
+  <link rel="preload" href="/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="/fonts/fonts.css" />
+  <link rel="stylesheet" href="/about.css" />
+  <link rel="icon" type="image/svg+xml" sizes="any" href="/favicon.svg" />
+  ${metadata(siteUrl, { about: true })}
+</head>
+<body>${aboutBody}</body>
+</html>
+`;
+  fs.mkdirSync(path.join(publicDir, 'about'), { recursive: true });
+  fs.writeFileSync(path.join(publicDir, 'about/index.html'), about);
+  fs.writeFileSync(path.join(publicDir, 'robots.txt'), `User-agent: *
+Allow: /
 
-  const trimmed = value.trim();
-  if (!trimmed) {
-    return null;
-  }
+Sitemap: ${siteUrl}/sitemap.xml
+`);
+  const urls = ['/', '/about/'].map((route) => `  <url>
+    <loc>${escapeHtml(siteUrl + route)}</loc>
+    <lastmod>${config.contentUpdated}</lastmod>
+  </url>`).join(String.fromCharCode(10));
+  fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), `<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+${urls}
+</urlset>
+`);
+  return siteUrl;
+}
 
-  const withProtocol = /^https?:\/\//i.test(trimmed) ? trimmed : `https://${trimmed}`;
-  try {
-    const url = new URL(withProtocol);
-    return url.origin;
-  } catch {
-    return null;
-  }
-};
-
-const pickSiteUrl = () => {
-  const candidates = [
-    process.env.REACT_APP_SITE_URL,
-    process.env.SITE_URL,
-    process.env.REACT_APP_VERCEL_PROJECT_PRODUCTION_URL,
-    process.env.REACT_APP_VERCEL_URL,
-  ];
-
-  for (const candidate of candidates) {
-    const normalized = toSiteUrl(candidate);
-    if (normalized) {
-      return normalized;
-    }
-  }
-
-  return 'https://chromatify.vercel.app';
-};
-
-const siteUrl = pickSiteUrl();
-const canonicalUrl = `${siteUrl}/`;
-const today = new Date().toISOString().split('T')[0];
-
-const updateIndexHtml = () => {
-  let html = fs.readFileSync(indexPath, 'utf8');
-
-  html = html.replace(/<link rel="canonical" href="[^"]*" \/>/, `<link rel="canonical" href="${canonicalUrl}" />`);
-
-  if (/<meta property="og:url" content="[^"]*" \/>/.test(html)) {
-    html = html.replace(/<meta property="og:url" content="[^"]*" \/>/, `<meta property="og:url" content="${canonicalUrl}" />`);
-  } else {
-    html = html.replace(
-      '<meta property="og:type" content="website" />',
-      `<meta property="og:type" content="website" />\n  <meta property="og:url" content="${canonicalUrl}" />`
-    );
-  }
-
-  fs.writeFileSync(indexPath, html, 'utf8');
-};
-
-const writeRobotsTxt = () => {
-  const robots = `User-agent: *\nAllow: /\n\nSitemap: ${siteUrl}/sitemap.xml\n`;
-  fs.writeFileSync(robotsPath, robots, 'utf8');
-};
-
-const writeSitemapXml = () => {
-  const sitemap = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n  <url>\n    <loc>${canonicalUrl}</loc>\n    <lastmod>${today}</lastmod>\n  </url>\n</urlset>\n`;
-  fs.writeFileSync(sitemapPath, sitemap, 'utf8');
-};
-
-updateIndexHtml();
-writeRobotsTxt();
-writeSitemapXml();
-
-console.log(`[seo] Prepared canonical/og:url, robots.txt, and sitemap.xml for ${siteUrl}`);
+if (require.main === module) console.log(`[seo] Prepared crawlable home/about pages, metadata, structured data, robots and sitemap for ${generateSeoAssets()}`);
+module.exports = { generateSeoAssets };

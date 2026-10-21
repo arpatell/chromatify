@@ -1,62 +1,111 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#5f55ff" />
-  <meta
-    name="description"
-    content="Chromatify is a Spotify color aura generator that turns your top tracks into a shareable music aura palette and export-ready social card."
-  />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#121719" />
+  <link rel="preload" href="%PUBLIC_URL%/fonts/manrope-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="preload" href="%PUBLIC_URL%/fonts/barlow-condensed-900-latin.woff2" as="font" type="font/woff2" crossorigin />
+  <link rel="stylesheet" href="%PUBLIC_URL%/fonts/fonts.css" />
+  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+  <link rel="icon" type="image/svg+xml" sizes="any" href="%PUBLIC_URL%/favicon.svg" />
+  <script>try { document.documentElement.dataset.theme = localStorage.getItem('chromatify-theme') === 'light' ? 'light' : 'dark'; } catch (_) {}</script>
+  <title>Chromatify — Spotify Colors &amp; Music Aura Generator</title>
+  <meta name="description" content="Turn your Spotify top tracks into a personal music aura and color palette. Discover your Spotify colors, save an aura image, and share it with friends." />
+  <meta name="application-name" content="Chromatify" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <link rel="canonical" href="https://chromatify.vercel.app/" />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://chromatify.vercel.app/" />
-  <meta property="og:title" content="Chromatify" />
-  <meta
-    property="og:description"
-    content="Generate your Spotify color aura, discover your music mood palette, and share your aura card in one tap."
-  />
-  <meta property="og:image" content="%PUBLIC_URL%/image.png" />
   <meta property="og:site_name" content="Chromatify" />
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:title" content="Chromatify — Spotify Colors &amp; Music Aura Generator" />
+  <meta property="og:description" content="Turn your Spotify top tracks into a personal music aura and color palette. Discover your Spotify colors, save an aura image, and share it with friends." />
+  <meta property="og:image" content="https://chromatify.vercel.app/image.png" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Chromatify: turn Spotify music into a personal color aura" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Chromatify" />
-  <meta
-    name="twitter:description"
-    content="Turn Spotify top tracks into a personalized color aura palette and share your music identity."
-  />
-  <meta name="twitter:image" content="%PUBLIC_URL%/image.png" />
-  <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-  <link rel="icon" type="image/svg+xml" href="%PUBLIC_URL%/favicon.svg" />
-  <script type="application/ld+json">
+  <meta name="twitter:title" content="Chromatify — Spotify Colors &amp; Music Aura Generator" />
+  <meta name="twitter:description" content="Turn your Spotify top tracks into a personal music aura and color palette. Discover your Spotify colors, save an aura image, and share it with friends." />
+  <meta name="twitter:image" content="https://chromatify.vercel.app/image.png" />
+  <meta name="twitter:image:alt" content="Chromatify: turn Spotify music into a personal color aura" />
+  <script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "WebSite",
-          "name": "Chromatify",
-          "description": "Chromatify helps you generate a Spotify color aura from your listening history."
-        },
-        {
-          "@type": ["SoftwareApplication", "WebApplication"],
-          "name": "Chromatify",
-          "applicationCategory": "MusicApplication",
-          "operatingSystem": "Web",
-          "offers": {
-            "@type": "Offer",
-            "price": "0",
-            "priceCurrency": "USD"
-          },
-          "description": "Generate a Spotify color aura, preview top tracks, and export a shareable aura card.",
-          "image": "%PUBLIC_URL%/image.png"
-        }
+      "@type": "WebSite",
+      "@id": "https://chromatify.vercel.app/#website",
+      "url": "https://chromatify.vercel.app/",
+      "name": "Chromatify",
+      "description": "Turn your Spotify top tracks into a personal music aura and color palette. Discover your Spotify colors, save an aura image, and share it with friends.",
+      "inLanguage": "en"
+    },
+    {
+      "@type": [
+        "SoftwareApplication",
+        "WebApplication"
+      ],
+      "@id": "https://chromatify.vercel.app/#app",
+      "name": "Chromatify",
+      "url": "https://chromatify.vercel.app/",
+      "applicationCategory": "MultimediaApplication",
+      "operatingSystem": "Web",
+      "browserRequirements": "Requires JavaScript and a Spotify connection to generate an aura.",
+      "isAccessibleForFree": true,
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "description": "Turn your Spotify top tracks into a personal music aura and color palette. Discover your Spotify colors, save an aura image, and share it with friends.",
+      "image": "https://chromatify.vercel.app/image.png",
+      "featureList": [
+        "Spotify top tracks for three time ranges",
+        "Album-art color palettes and a personal music aura",
+        "Named colors with exact hex values",
+        "Downloadable aura images",
+        "Public aura links to share with friends",
+        "Dark and light themes"
       ]
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://chromatify.vercel.app/#webpage",
+      "url": "https://chromatify.vercel.app/",
+      "name": "Chromatify — Spotify Colors & Music Aura Generator",
+      "description": "Turn your Spotify top tracks into a personal music aura and color palette. Discover your Spotify colors, save an aura image, and share it with friends.",
+      "inLanguage": "en",
+      "isPartOf": {
+        "@id": "https://chromatify.vercel.app/#website"
+      },
+      "about": {
+        "@id": "https://chromatify.vercel.app/#app"
+      }
+    }
+  ]
+}</script>
+  <script>
+    // Keep OAuth callbacks and individual aura snapshots out of search listings.
+    if (location.pathname === '/callback' || /(?:^|[?&])(?:aura|code|error)=/.test(location.search)) {
+      document.querySelector('meta[name="robots"]').content = 'noindex,follow';
     }
   </script>
-  <title>Chromatify</title>
 </head>
 <body>
-  <noscript>You need to enable JavaScript to run this app.</noscript>
-  <div id="root"></div>
+  <div id="root"><div class="static-preview">
+  <style>
+    .static-preview { min-height: 100vh; background: #121719; color: #edf0e8; font-family: Manrope, sans-serif; padding: 32px max(24px, calc((100vw - 1184px)/2)); }
+    .static-preview * { box-sizing: border-box; }
+    .static-preview .static-brand { display: inline-flex; gap: 14px; align-items: center; color: inherit; font-size: 29px; font-weight: 800; text-decoration: none; letter-spacing: -.04em; }
+    .static-preview main { max-width: 620px; margin: 90px 0; }
+    .static-preview h1 { font-size: clamp(48px, 7vw, 72px); line-height: 1.05; letter-spacing: -.04em; margin: 0; }
+    .static-preview p { font-size: 15px; line-height: 1.8; color: #aebbbd; margin: 24px 0; }
+    .static-preview a:focus-visible { outline: 2px solid #edac8d; outline-offset: 4px; }
+  </style>
+  <header><a class="static-brand" href="/">Chromatify<img src="/brand-aura.png" width="26" height="26" alt="" /></a></header>
+  <main id="main-content"><h1>Your music.<br />In full color.</h1><p>Musical aura based on your Spotify listening history. Turn the tracks you love into a color palette that’s unmistakably you.</p><p>Choose a time frame. Find your colors. Share your aura.</p><noscript><p>Enable JavaScript to connect Spotify and generate your aura.</p></noscript></main>
+</div>
+</div>
 </body>
 </html>

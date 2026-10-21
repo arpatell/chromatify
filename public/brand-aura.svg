@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="192" height="192" viewBox="0 0 26 26">
+  <defs>
+    <radialGradient id="body" cx="40%" cy="35%" r="70%"><stop stop-color="#8456b5"/><stop offset=".65" stop-color="#61418d"/><stop offset="1" stop-color="#3b315e"/></radialGradient>
+    <radialGradient id="blue" cx="82%" cy="24%" r="68%"><stop stop-color="#7995e6"/><stop offset=".45" stop-color="#6579ce" stop-opacity=".8"/><stop offset="1" stop-color="#6579ce" stop-opacity="0"/></radialGradient>
+    <radialGradient id="orange" cx="24%" cy="80%" r="65%"><stop stop-color="#eeb27d"/><stop offset=".4" stop-color="#bc7c91" stop-opacity=".75"/><stop offset="1" stop-color="#bc7c91" stop-opacity="0"/></radialGradient>
+    <radialGradient id="edge" cx="40%" cy="35%" r="70%"><stop offset=".65" stop-color="#30264d" stop-opacity="0"/><stop offset="1" stop-color="#30264d" stop-opacity=".32"/></radialGradient>
+  </defs>
+  <circle cx="13" cy="13" r="13" fill="url(#body)"/>
+  <circle cx="13" cy="13" r="13" fill="url(#blue)"/>
+  <circle cx="13" cy="13" r="13" fill="url(#orange)"/>
+  <circle cx="13" cy="13" r="13" fill="url(#edge)"/>
+</svg>

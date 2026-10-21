@@ -14,6 +14,7 @@
     "cors-anywhere": "^0.4.4",
     "html2canvas": "^1.4.1",
     "jwt-decode": "^3.1.2",
+    "qrcode.react": "^4.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.14.0",
@@ -27,7 +28,8 @@
     "prebuild": "node ./scripts/generate-seo-assets.js",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "test:seo": "node --test scripts/seo/metadata.test.cjs"
   },
   "engines": {
     "node": "24.x"

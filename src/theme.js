@@ -1,75 +1,17 @@
 import { createTheme } from '@mui/material/styles';
 
-const theme = createTheme({
+export const createAppTheme = (mode) => createTheme({
   palette: {
-    mode: 'light',
-    primary: {
-      main: '#5f55ff',
-      dark: '#4f46df',
-    },
-    secondary: {
-      main: '#1db954',
-    },
-    background: {
-      default: '#ecf2ff',
-      paper: 'rgba(255, 255, 255, 0.66)',
-    },
-    text: {
-      primary: '#151f39',
-      secondary: '#4a5a7f',
-    },
+    mode,
+    primary: { main: mode === 'dark' ? '#edac8d' : '#8a4429' },
+    background: { default: mode === 'dark' ? '#121719' : '#f0f0e9', paper: mode === 'dark' ? '#1c2427' : '#fafaf5' },
+    text: { primary: mode === 'dark' ? '#edf0e8' : '#172125', secondary: mode === 'dark' ? '#aebbbd' : '#546467' },
   },
-  shape: {
-    borderRadius: 10,
-  },
-  typography: {
-    fontFamily: '"Sora", "Manrope", "DM Sans", sans-serif',
-    h1: {
-      fontWeight: 700,
-      letterSpacing: '-0.03em',
-    },
-    h2: {
-      fontWeight: 700,
-      letterSpacing: '-0.025em',
-    },
-    h4: {
-      fontWeight: 700,
-    },
-    button: {
-      textTransform: 'none',
-      fontWeight: 700,
-      borderRadius: 10,
-    },
-  },
+  typography: { fontFamily: 'Manrope, sans-serif', button: { textTransform: 'none', fontWeight: 700 } },
+  shape: { borderRadius: 14 },
   components: {
-    MuiCssBaseline: {
-      styleOverrides: {
-        '*': {
-          boxSizing: 'border-box',
-        },
-        body: {
-          minHeight: '100dvh',
-          margin: 0,
-        },
-      },
-    },
-    MuiCard: {
-      styleOverrides: {
-        root: {
-          backdropFilter: 'blur(18px)',
-          WebkitBackdropFilter: 'blur(18px)',
-        },
-      },
-    },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          borderRadius: 10,
-          paddingInline: 16,
-        },
-      },
-    },
+    MuiCssBaseline: { styleOverrides: { body: { minHeight: '100dvh' } } },
+    MuiDialog: { styleOverrides: { paper: { backgroundImage: 'none', borderRadius: 16 } } },
+    MuiMenu: { styleOverrides: { paper: { backgroundImage: 'none' } } },
   },
 });
-
-export default theme;

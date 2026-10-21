@@ -1,0 +1,524 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-10-21T05:36:17.492Z",
+  "title": "Design System: Chromatify",
+  "extensions": {
+    "colorMeta": {
+      "background": {
+        "role": "neutral",
+        "displayName": "Background",
+        "tonalRamp": [
+          "oklch(15.00% 0.00863 223.94)",
+          "oklch(26.43% 0.00863 223.94)",
+          "oklch(37.86% 0.00863 223.94)",
+          "oklch(49.29% 0.00863 223.94)",
+          "oklch(60.71% 0.00863 223.94)",
+          "oklch(72.14% 0.00863 223.94)",
+          "oklch(83.57% 0.00863 223.94)",
+          "oklch(95.00% 0.00863 223.94)"
+        ]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.01276 222.58)",
+          "oklch(26.43% 0.01276 222.58)",
+          "oklch(37.86% 0.01276 222.58)",
+          "oklch(49.29% 0.01276 222.58)",
+          "oklch(60.71% 0.01276 222.58)",
+          "oklch(72.14% 0.01276 222.58)",
+          "oklch(83.57% 0.01276 222.58)",
+          "oklch(95.00% 0.01276 222.58)"
+        ]
+      },
+      "surface-hover": {
+        "role": "neutral",
+        "displayName": "Surface Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.01651 221.94)",
+          "oklch(26.43% 0.01651 221.94)",
+          "oklch(37.86% 0.01651 221.94)",
+          "oklch(49.29% 0.01651 221.94)",
+          "oklch(60.71% 0.01651 221.94)",
+          "oklch(72.14% 0.01651 221.94)",
+          "oklch(83.57% 0.01651 221.94)",
+          "oklch(95.00% 0.01651 221.94)"
+        ]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01107 123.46)",
+          "oklch(26.43% 0.01107 123.46)",
+          "oklch(37.86% 0.01107 123.46)",
+          "oklch(49.29% 0.01107 123.46)",
+          "oklch(60.71% 0.01107 123.46)",
+          "oklch(72.14% 0.01107 123.46)",
+          "oklch(83.57% 0.01107 123.46)",
+          "oklch(95.00% 0.01107 123.46)"
+        ]
+      },
+      "muted": {
+        "role": "neutral",
+        "displayName": "Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.01471 207.86)",
+          "oklch(26.43% 0.01471 207.86)",
+          "oklch(37.86% 0.01471 207.86)",
+          "oklch(49.29% 0.01471 207.86)",
+          "oklch(60.71% 0.01471 207.86)",
+          "oklch(72.14% 0.01471 207.86)",
+          "oklch(83.57% 0.01471 207.86)",
+          "oklch(95.00% 0.01471 207.86)"
+        ]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.01783 224.97)",
+          "oklch(26.43% 0.01783 224.97)",
+          "oklch(37.86% 0.01783 224.97)",
+          "oklch(49.29% 0.01783 224.97)",
+          "oklch(60.71% 0.01783 224.97)",
+          "oklch(72.14% 0.01783 224.97)",
+          "oklch(83.57% 0.01783 224.97)",
+          "oklch(95.00% 0.01783 224.97)"
+        ]
+      },
+      "peach": {
+        "role": "primary",
+        "displayName": "Peach",
+        "tonalRamp": [
+          "oklch(15.00% 0.08777 46.50)",
+          "oklch(26.43% 0.08777 46.50)",
+          "oklch(37.86% 0.08777 46.50)",
+          "oklch(49.29% 0.08777 46.50)",
+          "oklch(60.71% 0.08777 46.50)",
+          "oklch(72.14% 0.08777 46.50)",
+          "oklch(83.57% 0.08777 46.50)",
+          "oklch(95.00% 0.08777 46.50)"
+        ]
+      },
+      "peach-hover": {
+        "role": "primary",
+        "displayName": "Peach Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.07819 49.81)",
+          "oklch(26.43% 0.07819 49.81)",
+          "oklch(37.86% 0.07819 49.81)",
+          "oklch(49.29% 0.07819 49.81)",
+          "oklch(60.71% 0.07819 49.81)",
+          "oklch(72.14% 0.07819 49.81)",
+          "oklch(83.57% 0.07819 49.81)",
+          "oklch(95.00% 0.07819 49.81)"
+        ]
+      },
+      "sage": {
+        "role": "secondary",
+        "displayName": "Sage",
+        "tonalRamp": [
+          "oklch(15.00% 0.03673 171.88)",
+          "oklch(26.43% 0.03673 171.88)",
+          "oklch(37.86% 0.03673 171.88)",
+          "oklch(49.29% 0.03673 171.88)",
+          "oklch(60.71% 0.03673 171.88)",
+          "oklch(72.14% 0.03673 171.88)",
+          "oklch(83.57% 0.03673 171.88)",
+          "oklch(95.00% 0.03673 171.88)"
+        ]
+      },
+      "button-ink": {
+        "role": "neutral",
+        "displayName": "Button Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01481 181.33)",
+          "oklch(26.43% 0.01481 181.33)",
+          "oklch(37.86% 0.01481 181.33)",
+          "oklch(49.29% 0.01481 181.33)",
+          "oklch(60.71% 0.01481 181.33)",
+          "oklch(72.14% 0.01481 181.33)",
+          "oklch(83.57% 0.01481 181.33)",
+          "oklch(95.00% 0.01481 181.33)"
+        ]
+      },
+      "error": {
+        "role": "neutral",
+        "displayName": "Error",
+        "tonalRamp": [
+          "oklch(15.00% 0.08487 33.27)",
+          "oklch(26.43% 0.08487 33.27)",
+          "oklch(37.86% 0.08487 33.27)",
+          "oklch(49.29% 0.08487 33.27)",
+          "oklch(60.71% 0.08487 33.27)",
+          "oklch(72.14% 0.08487 33.27)",
+          "oklch(83.57% 0.08487 33.27)",
+          "oklch(95.00% 0.08487 33.27)"
+        ]
+      },
+      "light-background": {
+        "role": "neutral",
+        "displayName": "Light Background",
+        "tonalRamp": [
+          "oklch(15.00% 0.00929 106.57)",
+          "oklch(26.43% 0.00929 106.57)",
+          "oklch(37.86% 0.00929 106.57)",
+          "oklch(49.29% 0.00929 106.57)",
+          "oklch(60.71% 0.00929 106.57)",
+          "oklch(72.14% 0.00929 106.57)",
+          "oklch(83.57% 0.00929 106.57)",
+          "oklch(95.00% 0.00929 106.57)"
+        ]
+      },
+      "light-surface": {
+        "role": "neutral",
+        "displayName": "Light Surface",
+        "tonalRamp": [
+          "oklch(15.00% 0.00659 106.52)",
+          "oklch(26.43% 0.00659 106.52)",
+          "oklch(37.86% 0.00659 106.52)",
+          "oklch(49.29% 0.00659 106.52)",
+          "oklch(60.71% 0.00659 106.52)",
+          "oklch(72.14% 0.00659 106.52)",
+          "oklch(83.57% 0.00659 106.52)",
+          "oklch(95.00% 0.00659 106.52)"
+        ]
+      },
+      "light-surface-hover": {
+        "role": "neutral",
+        "displayName": "Light Surface Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.01399 124.56)",
+          "oklch(26.43% 0.01399 124.56)",
+          "oklch(37.86% 0.01399 124.56)",
+          "oklch(49.29% 0.01399 124.56)",
+          "oklch(60.71% 0.01399 124.56)",
+          "oklch(72.14% 0.01399 124.56)",
+          "oklch(83.57% 0.01399 124.56)",
+          "oklch(95.00% 0.01399 124.56)"
+        ]
+      },
+      "light-ink": {
+        "role": "neutral",
+        "displayName": "Light Ink",
+        "tonalRamp": [
+          "oklch(15.00% 0.01615 224.39)",
+          "oklch(26.43% 0.01615 224.39)",
+          "oklch(37.86% 0.01615 224.39)",
+          "oklch(49.29% 0.01615 224.39)",
+          "oklch(60.71% 0.01615 224.39)",
+          "oklch(72.14% 0.01615 224.39)",
+          "oklch(83.57% 0.01615 224.39)",
+          "oklch(95.00% 0.01615 224.39)"
+        ]
+      },
+      "light-muted": {
+        "role": "neutral",
+        "displayName": "Light Muted",
+        "tonalRamp": [
+          "oklch(15.00% 0.02008 210.22)",
+          "oklch(26.43% 0.02008 210.22)",
+          "oklch(37.86% 0.02008 210.22)",
+          "oklch(49.29% 0.02008 210.22)",
+          "oklch(60.71% 0.02008 210.22)",
+          "oklch(72.14% 0.02008 210.22)",
+          "oklch(83.57% 0.02008 210.22)",
+          "oklch(95.00% 0.02008 210.22)"
+        ]
+      },
+      "light-line": {
+        "role": "neutral",
+        "displayName": "Light Line",
+        "tonalRamp": [
+          "oklch(15.00% 0.01504 142.22)",
+          "oklch(26.43% 0.01504 142.22)",
+          "oklch(37.86% 0.01504 142.22)",
+          "oklch(49.29% 0.01504 142.22)",
+          "oklch(60.71% 0.01504 142.22)",
+          "oklch(72.14% 0.01504 142.22)",
+          "oklch(83.57% 0.01504 142.22)",
+          "oklch(95.00% 0.01504 142.22)"
+        ]
+      },
+      "light-peach-hover": {
+        "role": "primary",
+        "displayName": "Light Peach Hover",
+        "tonalRamp": [
+          "oklch(15.00% 0.09953 45.75)",
+          "oklch(26.43% 0.09953 45.75)",
+          "oklch(37.86% 0.09953 45.75)",
+          "oklch(49.29% 0.09953 45.75)",
+          "oklch(60.71% 0.09953 45.75)",
+          "oklch(72.14% 0.09953 45.75)",
+          "oklch(83.57% 0.09953 45.75)",
+          "oklch(95.00% 0.09953 45.75)"
+        ]
+      },
+      "light-sage": {
+        "role": "secondary",
+        "displayName": "Light Sage",
+        "tonalRamp": [
+          "oklch(15.00% 0.03725 169.98)",
+          "oklch(26.43% 0.03725 169.98)",
+          "oklch(37.86% 0.03725 169.98)",
+          "oklch(49.29% 0.03725 169.98)",
+          "oklch(60.71% 0.03725 169.98)",
+          "oklch(72.14% 0.03725 169.98)",
+          "oklch(83.57% 0.03725 169.98)",
+          "oklch(95.00% 0.03725 169.98)"
+        ]
+      },
+      "light-error": {
+        "role": "neutral",
+        "displayName": "Light Error",
+        "tonalRamp": [
+          "oklch(15.00% 0.15049 33.47)",
+          "oklch(26.43% 0.15049 33.47)",
+          "oklch(37.86% 0.15049 33.47)",
+          "oklch(49.29% 0.15049 33.47)",
+          "oklch(60.71% 0.15049 33.47)",
+          "oklch(72.14% 0.15049 33.47)",
+          "oklch(83.57% 0.15049 33.47)",
+          "oklch(95.00% 0.15049 33.47)"
+        ]
+      },
+      "mui-light-primary": {
+        "role": "primary",
+        "displayName": "Mui Light Primary",
+        "tonalRamp": [
+          "oklch(15.00% 0.10351 41.12)",
+          "oklch(26.43% 0.10351 41.12)",
+          "oklch(37.86% 0.10351 41.12)",
+          "oklch(49.29% 0.10351 41.12)",
+          "oklch(60.71% 0.10351 41.12)",
+          "oklch(72.14% 0.10351 41.12)",
+          "oklch(83.57% 0.10351 41.12)",
+          "oklch(95.00% 0.10351 41.12)"
+        ]
+      },
+      "orb-purple": {
+        "role": "tertiary",
+        "displayName": "Orb Purple"
+      },
+      "orb-purple-deep": {
+        "role": "tertiary",
+        "displayName": "Orb Purple Deep"
+      },
+      "orb-blue": {
+        "role": "tertiary",
+        "displayName": "Orb Blue"
+      },
+      "orb-orange": {
+        "role": "tertiary",
+        "displayName": "Orb Orange"
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Sleeve name",
+        "purpose": "The large condensed aura title."
+      },
+      "headline": {
+        "displayName": "Page introduction",
+        "purpose": "Strong Manrope page headings."
+      },
+      "title": {
+        "displayName": "Section title",
+        "purpose": "Compact, bold section headings."
+      },
+      "body": {
+        "displayName": "Supporting prose",
+        "purpose": "Readable explanatory text with generous leading."
+      },
+      "label": {
+        "displayName": "Action label",
+        "purpose": "Clear, compact button labels."
+      }
+    },
+    "shadows": [
+      {
+        "name": "share-preview",
+        "value": "0 12px 25px rgba(0,0,0,.18)",
+        "purpose": "Diffuse depth beneath the inline portrait preview."
+      }
+    ],
+    "motion": [
+      {
+        "name": "control-transition",
+        "value": "background-color 160ms ease, border-color 160ms ease",
+        "purpose": "Primary and secondary button feedback."
+      },
+      {
+        "name": "aura-breathe",
+        "value": "22s ease-in-out infinite alternate",
+        "purpose": "Main field translation/scaling, without rotation."
+      },
+      {
+        "name": "aura-melt",
+        "value": "29s ease-in-out infinite alternate",
+        "purpose": "Secondary radial blend translation/scaling."
+      },
+      {
+        "name": "reduced-motion",
+        "value": "animation: none !important; transition: none !important; scroll-behavior: auto",
+        "purpose": "System motion preference; export sleeves are also still."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "compact-desktop",
+        "value": "1000px"
+      },
+      {
+        "name": "stacked",
+        "value": "760px"
+      },
+      {
+        "name": "small-phone",
+        "value": "360px"
+      }
+    ],
+    "focus": [
+      {
+        "name": "keyboard",
+        "value": "outline: 2px solid var(--peach); outline-offset: 4px",
+        "purpose": "Shared visible keyboard indicator on controls and links."
+      }
+    ],
+    "tonalRampNote": "Eight-step OKLCH ramps are synthesized dark-to-light preview metadata, not additional production tokens. CSS tokens and DESIGN.md frontmatter remain normative.",
+    "sources": [
+      "src/App.css",
+      "src/theme.js",
+      "src/components/AppHeader.js",
+      "src/components/AuraMark.js",
+      "src/components/AuraSleeve.js",
+      "src/components/Dashboard.js",
+      "src/components/SharePanel.js",
+      "src/components/SupportDialog.js"
+    ],
+    "notCanonized": "No sampled craft-floor defect or unresolved design drift was canonized. The login preview palette, dashboard composition, and export-specific sizes remain surface examples rather than global tokens."
+  },
+  "components": [
+    {
+      "name": "Primary action",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Peach action for generating or sharing a music aura.",
+      "html": "<button type=\"button\" class=\"ds-primary\">Generate my aura<svg width=\"18\" height=\"18\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 12h16m-6-6 6 6-6 6\"/></svg></button>",
+      "css": ".ds-primary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:10px;font:700 14px/1.5 Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:background-color 160ms ease,border-color 160ms ease}.ds-primary:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}.ds-primary:disabled{opacity:.55;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-primary{transition:none}}.ds-primary{background:var(--peach,#edac8d);color:var(--button-ink,#16201e)}.ds-primary:hover{background:var(--peach-hover,#f6bd9e)}"
+    },
+    {
+      "name": "Secondary action",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Outlined action for copying a public link or saving an image.",
+      "html": "<button type=\"button\" class=\"ds-secondary\">Copy link</button>",
+      "css": ".ds-secondary{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:48px;padding:12px 20px;border:1px solid transparent;border-radius:10px;font:700 14px/1.5 Manrope,sans-serif;text-decoration:none;cursor:pointer;transition:background-color 160ms ease,border-color 160ms ease}.ds-secondary:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}.ds-secondary:disabled{opacity:.55;cursor:wait}@media(prefers-reduced-motion:reduce){.ds-secondary{transition:none}}.ds-secondary{background:transparent;color:var(--ink,#edf0e8);border-color:var(--line,#374348)}.ds-secondary:hover{background:var(--surface-hover,#283337);border-color:var(--muted,#aebbbd)}"
+    },
+    {
+      "name": "Read-only share link",
+      "kind": "input",
+      "refersTo": "link-field",
+      "description": "Compact surface-tone field for manually copying a shareable URL.",
+      "html": "<label class=\"ds-field-label\" for=\"ds-link\">Shareable aura link</label><input class=\"ds-link\" id=\"ds-link\" readonly value=\"https://chromatify.vercel.app/?aura=…\" />",
+      "css": ".ds-field-label{display:block;margin-bottom:8px;color:var(--muted,#aebbbd);font:400 11px Manrope,sans-serif}.ds-link{width:100%;padding:10px;border:1px solid var(--line,#374348);border-radius:7px;background:var(--surface,#1c2427);color:var(--ink,#edf0e8);font:400 12px Manrope,sans-serif;caret-color:var(--ink,#edf0e8)}.ds-link:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}"
+    },
+    {
+      "name": "Header utilities",
+      "kind": "nav",
+      "refersTo": "utility-button",
+      "description": "Quiet theme and coffee controls with a directly labeled Disconnect action.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"App controls\"><button type=\"button\" class=\"ds-utility\" aria-label=\"Switch to light mode\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><circle cx=\"12\" cy=\"12\" r=\"4\"/><path d=\"M12 2v2m0 16v2M2 12h2m16 0h2M4.9 4.9l1.4 1.4m11.4 11.4 1.4 1.4M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4\"/></svg></button><button type=\"button\" class=\"ds-utility ds-coffee\" aria-label=\"Support development\"><svg width=\"22\" height=\"22\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M4 8h13v7a4 4 0 0 1-4 4H8a4 4 0 0 1-4-4V8Zm13 1h1a3 3 0 0 1 0 6h-1M4 22h14M7 2v3m4-3v3m4-3v3\"/></svg></button><button type=\"button\" class=\"ds-disconnect\">Disconnect</button></nav>",
+      "css": ".ds-nav{display:flex;align-items:center;gap:7px;color:var(--ink,#edf0e8)}.ds-utility{display:inline-flex;align-items:center;justify-content:center;width:44px;height:44px;padding:10px;border:0;border-radius:10px;background:transparent;color:inherit;cursor:pointer;transition:background-color 160ms ease}.ds-utility:hover,.ds-disconnect:hover{background:var(--surface-hover,#283337)}.ds-coffee:hover{color:var(--peach,#edac8d)}.ds-disconnect{min-height:44px;padding:8px 12px;border:1px solid var(--line,#374348);border-radius:8px;background:transparent;color:inherit;font:600 12px Manrope,sans-serif;cursor:pointer}.ds-utility:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}.ds-disconnect:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}@media(prefers-reduced-motion:reduce){.ds-utility{transition:none}}"
+    },
+    {
+      "name": "Listening range",
+      "kind": "custom",
+      "description": "Grouped listening ranges with the current range indicated in sage.",
+      "html": "<div class=\"ds-range\" role=\"group\" aria-label=\"Listening time range\"><button type=\"button\" aria-pressed=\"true\">Last Month</button><button type=\"button\" aria-pressed=\"false\">6 months</button><button type=\"button\" aria-pressed=\"false\">All Time</button></div>",
+      "css": ".ds-range{display:flex;padding:5px;border:1px solid var(--line,#374348);border-radius:12px;max-width:420px}.ds-range button{flex:1;min-height:40px;padding:7px 20px;border:0;border-radius:7px;background:transparent;color:var(--muted,#aebbbd);font:600 13px Manrope,sans-serif;white-space:nowrap;cursor:pointer}.ds-range button:hover{color:var(--ink,#edf0e8)}.ds-range button[aria-pressed=true]{background:var(--sage,#a8c7bc);color:var(--button-ink,#16201e);font-weight:800}.ds-range button:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}@media(max-width:760px){.ds-range button{padding-inline:10px;min-height:42px}}"
+    },
+    {
+      "name": "Wallet network",
+      "kind": "chip",
+      "refersTo": "network-option",
+      "description": "Small bordered network options; the selected network uses sage.",
+      "html": "<div class=\"ds-networks\"><button type=\"button\" class=\"ds-network\" aria-pressed=\"true\">SOL</button><button type=\"button\" class=\"ds-network\" aria-pressed=\"false\">ETH</button></div>",
+      "css": ".ds-networks{display:flex;flex-wrap:wrap;gap:7px}.ds-network{min-height:44px;padding:8px 13px;border:1px solid var(--line,#374348);border-radius:7px;background:transparent;color:var(--ink,#edf0e8);font:700 12px Manrope,sans-serif;cursor:pointer}.ds-network[aria-pressed=true]{background:var(--sage,#a8c7bc);color:var(--button-ink,#16201e);border-color:var(--sage,#a8c7bc)}.ds-network:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}"
+    },
+    {
+      "name": "Status container",
+      "kind": "card",
+      "refersTo": "status-container",
+      "description": "A quiet tonal message area with an underlined retry action.",
+      "html": "<div class=\"ds-status\"><p>Your aura couldn’t be generated. Check your connection and try again.</p><button type=\"button\" class=\"ds-retry\">Try again</button></div>",
+      "css": ".ds-status{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:16px 20px;border-radius:10px;background:var(--surface,#1c2427);color:var(--error,#ffb9a9);font:400 13px Manrope,sans-serif}.ds-status p{margin:0;line-height:1.65}.ds-retry{padding:8px 0;border:0;background:none;color:inherit;font:700 14px Manrope,sans-serif;text-decoration:underline;text-underline-offset:4px;cursor:pointer}.ds-retry:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}@media(max-width:760px){.ds-status{align-items:flex-start;flex-direction:column;gap:5px;padding:14px}}"
+    },
+    {
+      "name": "Spectrum sleeve",
+      "kind": "custom",
+      "refersTo": "aura-sleeve",
+      "description": "Signature blended rectangular sleeve. This static preview palette is illustrative; production uses the real palette and adaptive wash.",
+      "html": "<div class=\"ds-sleeve\"><div class=\"ds-flow\" aria-hidden=\"true\"></div><div class=\"ds-sleeve-content\"><h2 class=\"ds-aura-name\">Velvet<br>Reverie</h2><div class=\"ds-sleeve-meta\"><span>#AC86ED</span><span>Last Month</span></div></div></div>",
+      "css": ".ds-sleeve{position:relative;isolation:isolate;overflow:hidden;display:flex;min-height:376px;border-radius:14px;background:#ac86ed;color:#121719}.ds-flow{position:absolute;inset:-12%;z-index:0;background:radial-gradient(ellipse at 14% 20%,#ac86ed 0%,transparent 60%),radial-gradient(ellipse at 90% 16%,#8fc4b0 0%,transparent 60%),radial-gradient(ellipse at 12% 95%,#ed997e 0%,transparent 62%),linear-gradient(135deg,#ac86ed,#ed997e 54%,#8fc4b0);animation:ds-breathe 22s ease-in-out infinite alternate}.ds-flow::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 80% 70%,#8fc4b0,transparent 64%),radial-gradient(ellipse at 34% 50%,#ed997e,transparent 67%);opacity:.5;animation:ds-melt 29s ease-in-out infinite alternate}.ds-flow::after{content:'';position:absolute;inset:0;background:rgba(255,255,255,.23)}.ds-sleeve-content{position:relative;z-index:1;display:flex;flex:1;min-width:0;flex-direction:column;justify-content:space-between;padding:28px 28px 20px;background:linear-gradient(105deg,rgba(255,255,255,.28),transparent 80%)}.ds-aura-name{margin:0 0 20px;font:900 clamp(76px,7.4vw,96px)/.91 'Barlow Condensed',sans-serif;letter-spacing:-.025em;overflow-wrap:anywhere}.ds-sleeve-meta{display:flex;gap:12px;justify-content:space-between;align-items:center;min-height:30px;padding-top:10px;border-top:1px solid rgba(18,23,25,.5);font:700 13px Manrope,sans-serif;font-variant-numeric:tabular-nums}@keyframes ds-breathe{0%{transform:translate(-2%,1%) scale(1.03)}48%{transform:translate(3%,-2%) scale(1.07,1.02)}100%{transform:translate(-1%,3%) scale(1.02,1.08)}}@keyframes ds-melt{from{transform:translate(2%,-1%) scale(1.01)}to{transform:translate(-3%,2%) scale(1.08)}}@media(prefers-reduced-motion:reduce){.ds-flow,.ds-flow::before{animation:none}}"
+    },
+    {
+      "name": "Copyable palette color",
+      "kind": "custom",
+      "description": "Actual color sample paired with its descriptive name and unchanged hex value.",
+      "html": "<button type=\"button\" class=\"ds-palette\" aria-label=\"Copy #AC86ED\"><span class=\"ds-swatch\"></span><span class=\"ds-color-details\"><span class=\"ds-color-name\">Finding name...</span><span class=\"ds-color-hex\">#AC86ED</span></span></button>",
+      "css": ".ds-palette{display:flex;align-items:center;gap:10px;padding:4px 0;border:0;border-radius:6px;background:transparent;color:var(--ink,#edf0e8);text-align:left;cursor:pointer}.ds-swatch{display:block;width:39px;height:48px;border-radius:8px;background:#ac86ed;flex-shrink:0}.ds-palette:hover .ds-swatch{outline:2px solid var(--muted,#aebbbd);outline-offset:3px}.ds-color-details{display:flex;flex-direction:column;gap:4px;min-width:0;font-family:Manrope,sans-serif}.ds-color-name{font-size:12px;font-weight:700;line-height:1.3;overflow-wrap:anywhere}.ds-color-hex{font-size:11px;color:var(--muted,#aebbbd);font-variant-numeric:tabular-nums}.ds-palette:focus-visible{outline:2px solid var(--peach,#edac8d);outline-offset:4px}"
+    },
+    {
+      "name": "Compact track row",
+      "kind": "custom",
+      "description": "Rank, artwork fallback, and compact title/artist pair; real tracks use hydrated album artwork.",
+      "html": "<div class=\"ds-track\"><span class=\"ds-rank\">1</span><span class=\"ds-art\"><svg width=\"20\" height=\"20\" viewBox=\"0 0 24 24\" fill=\"none\" stroke=\"currentColor\" stroke-width=\"1.7\" stroke-linecap=\"round\" stroke-linejoin=\"round\" aria-hidden=\"true\" focusable=\"false\"><path d=\"M9 18V5l12-2v13M9 8l12-2\"/><ellipse cx=\"6\" cy=\"18\" rx=\"3\" ry=\"3\"/><ellipse cx=\"18\" cy=\"16\" rx=\"3\" ry=\"3\"/></svg></span><span class=\"ds-track-info\"><span class=\"ds-track-title\">A favorite track</span><span class=\"ds-track-artist\">Artist name</span></span></div>",
+      "css": ".ds-track{display:flex;align-items:center;gap:13px;padding:12px 0;min-height:73px;border-radius:5px;color:var(--ink,#edf0e8);font-family:Manrope,sans-serif}.ds-rank{width:14px;text-align:center;color:var(--muted,#aebbbd);font-size:12px;font-variant-numeric:tabular-nums;flex-shrink:0}.ds-art{display:grid;place-items:center;width:46px;height:46px;border-radius:7px;background:#ac86ed;color:#16201e;flex-shrink:0}.ds-track-info{display:flex;flex-direction:column;gap:4px;flex:1;min-width:0}.ds-track-title,.ds-track-artist{display:block;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.ds-track-title{font-size:13px;font-weight:700}.ds-track-artist{font-size:12px;color:var(--muted,#aebbbd)}@media(max-width:760px){.ds-track{min-height:75px;gap:15px}.ds-art{width:48px;height:48px}.ds-track-title{font-size:14px}}"
+    }
+  ],
+  "narrative": {
+    "northStar": "Spectrum sleeve",
+    "overview": "Music becomes a collectible color sleeve: a generous rectangular field of softly blended album-art colors, carrying a large condensed name. Matte charcoal and warm white give those personal colors space; peach actions and sage selections keep the interface calm and direct. Light mode preserves the same relationships on pale neutral surfaces.\n\nManrope provides clear, compact controls and supporting text. Barlow Condensed gives the sleeve its distinctive scale and character. Utility surfaces stay quiet so the listener's music and generated colors provide the variation.",
+    "keyCharacteristics": [
+      "Rectangular blended color fields with oversized condensed names.",
+      "Charcoal by default, with a persistent light preference.",
+      "Peach actions, sage selections, and restrained tonal surfaces.",
+      "Compact artwork rows and a consistent orange/blue/purple vector brand orb.",
+      "Slow translation and scaling, with reduced motion respected."
+    ],
+    "rules": [
+      {
+        "name": "The Actual Color Rule",
+        "body": "Preserve generated swatch hex values. Descriptive names come from Color.pizza or the closest vetted abstract catalog match; the creative aura title is a separate name for the whole mix.",
+        "section": "colors"
+      },
+      {
+        "name": "The Readable Sleeve Rule",
+        "body": "Use dark sleeve ink over the actual blended palette with the implemented adaptive white wash. The wash is computed from the darkest possible channel mixture, targets at least 4.7:1 contrast, and ranges from .23 to .55; swatch chips retain their original colors.",
+        "section": "colors"
+      },
+      {
+        "name": "The Two Voices Rule",
+        "body": "Keep the condensed voice on the color sleeve and use Manrope for the surrounding interface.",
+        "section": "typography"
+      }
+    ],
+    "dos": [
+      "**Do** keep theme roles consistent across controls, dialogs, and supporting text.",
+      "**Do** preserve actual swatch hex values and use the adaptive sleeve wash for readable names.",
+      "**Do** reuse AuraMark for the same orange/blue/purple identity in the interface and export.",
+      "**Do** preserve visible keyboard focus and reduce motion when requested by the system.",
+      "**Do** retain Spotify attribution and artwork-led track rows where tracks appear."
+    ],
+    "donts": [
+      "**Don't** rotate the aura field or animate exported sleeves.",
+      "**Don't** replace real palette colors with a fixed decorative brand palette.",
+      "**Don't** use descriptive swatch names as the creative aura title.",
+      "**Don't** make the signed-in initial state display sample results; the login preview remains clearly presented as a preview.",
+      "**Don't** let the light theme change the export's dark composition or obscure its Spotify logo."
+    ]
+  }
+}

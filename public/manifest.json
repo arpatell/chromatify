@@ -3,12 +3,12 @@
   "name": "Chromatify",
   "start_url": "/",
   "display": "standalone",
-  "theme_color": "#5f55ff",
-  "background_color": "#ecf2ff",
+  "theme_color": "#121719",
+  "background_color": "#121719",
   "icons": [
     {
       "src": "favicon.svg",
-      "sizes": "64x64",
+      "sizes": "any",
       "type": "image/svg+xml"
     }
   ]

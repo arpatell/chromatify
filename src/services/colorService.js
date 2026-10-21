@@ -1,3 +1,4 @@
+import { getColorNames } from './colorNamesService';
 import ColorThief from 'colorthief';
 const convert = require('color-convert');
 
@@ -232,41 +233,10 @@ export const getAuraStyleProfile = (colors) => {
   };
 };
 
-const HUE_NAMES = [
-  { name: 'Rose', min: 340, max: 360 },
-  { name: 'Coral', min: 0, max: 24 },
-  { name: 'Amber', min: 24, max: 52 },
-  { name: 'Lime', min: 52, max: 83 },
-  { name: 'Mint', min: 83, max: 138 },
-  { name: 'Aqua', min: 138, max: 182 },
-  { name: 'Sky', min: 182, max: 212 },
-  { name: 'Azure', min: 212, max: 240 },
-  { name: 'Indigo', min: 240, max: 266 },
-  { name: 'Violet', min: 266, max: 295 },
-  { name: 'Fuchsia', min: 295, max: 320 },
-  { name: 'Raspberry', min: 320, max: 340 },
-];
-
-const getHueFamily = (hue) => {
-  const family = HUE_NAMES.find((entry) => hue >= entry.min && hue < entry.max);
-  return family ? family.name : 'Spectrum';
-};
-
-const getToneWord = (saturation, lightness) => {
-  if (saturation > 82 && lightness > 44) return 'Electric';
-  if (saturation > 70) return 'Neon';
-  if (saturation > 56) return 'Vivid';
-  if (lightness > 72) return 'Soft';
-  return 'Lush';
-};
-
-export const getColorName = async (rgbColor) => {
-  if (!rgbColor?.length) {
-    return 'Unknown';
-  }
-  const [hue, saturation, lightness] = toHsl(rgbColor);
-  const hueFamily = getHueFamily(hue);
-  return `${getToneWord(saturation, lightness)} ${hueFamily}`;
+export const getColorName = async (color) => {
+  const rgb = toRgbColor(color);
+  if (!rgb || rgb.some((channel) => !Number.isFinite(channel))) return 'Unknown';
+  return (await getColorNames([arrayToHex(rgb)]))[0];
 };
 
 export const arrayToHex = (rgbColor) => {
