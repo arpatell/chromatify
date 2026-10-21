@@ -37,6 +37,8 @@ const glassCardSx = {
 };
 
 const SPOTIFY_LOGO_SRC = '/spotify-logo.png';
+// Hide listen counts until Spotify approves extended access.
+const SHOW_LISTEN_COUNTS = false;
 
 const SOCIAL_THEME = {
   x: { color: '#0f1419', label: 'X', iconSrc: 'https://cdn.simpleicons.org/x/ffffff' },
@@ -606,11 +608,13 @@ const Dashboard = ({ accessToken }) => {
             <Card sx={glassCardSx}>
               <CardContent sx={{ p: { xs: 2.2, sm: 2.8 } }}>
                 <Typography variant="h4">Top Songs</Typography>
-                <Typography variant="caption" color="text.secondary">
-                  {listenCountStatus === 'available'
-                    ? `Listen counts shown for ${timeRangeLabel}.`
-                    : `No listen count data available for ${timeRangeLabel}; showing 0.`}
-                </Typography>
+                {SHOW_LISTEN_COUNTS && (
+                  <Typography variant="caption" color="text.secondary">
+                    {listenCountStatus === 'available'
+                      ? `Listen counts shown for ${timeRangeLabel}.`
+                      : `No listen count data available for ${timeRangeLabel}; showing 0.`}
+                  </Typography>
+                )}
                 <Stack spacing={1.15} sx={{ mt: 1.8 }}>
                   {topSongs.slice(0, 7).map((song, index) => {
                     const colorHex = songColors[song.id] || '#ecf1ff';
@@ -689,9 +693,11 @@ const Dashboard = ({ accessToken }) => {
                           </Link>
                         </Stack>
                         <Stack spacing={0.1} alignItems="flex-end" sx={{ flexShrink: 0 }}>
-                          <Typography variant="caption" sx={{ fontWeight: 700, letterSpacing: 0.15 }}>
-                            {formatListenCount(listens)}
-                          </Typography>
+                          {SHOW_LISTEN_COUNTS && (
+                            <Typography variant="caption" sx={{ fontWeight: 700, letterSpacing: 0.15 }}>
+                              {formatListenCount(listens)}
+                            </Typography>
+                          )}
                           <Typography variant="caption" sx={{ fontWeight: 700, letterSpacing: 0.25 }}>
                             {colorHex}
                           </Typography>
